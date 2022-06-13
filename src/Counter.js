@@ -20,6 +20,7 @@ function Counter({ min, max }) {
         <>
             <button type="button" onClick={ minus }>-</button>
             <span>{ current }</span>
+            {/* <input type="text" value={ current } /> */}
             <button type="button" onClick={ plus }>+</button>
         </>
     );
@@ -28,6 +29,10 @@ function Counter({ min, max }) {
 Counter.propTypes = {
     min: PropTypes.number.isRequired,
     max: PropTypes.number.isRequired
+}
+
+Counter.defaultProps = {
+    min: 1
 }
 
 export default Counter;
