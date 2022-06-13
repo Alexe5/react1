@@ -5,14 +5,26 @@ function Counter({ min, max }) {
     let [ current, setCurrent ] = useState(min);
 
     function minus(){
-        if(current > min) {
+        if (current > min) {
             setCurrent(current - 1);
         }
     }
 
     function plus(){
-        if(current < max) {
+        if (current < max) {
             setCurrent(current + 1);
+        }
+    }
+
+    function change(e){
+        if (isNaN(e.target.value) || e.target.value === '') {
+            setCurrent(current);
+        } else if (parseInt(e.target.value) < min) {
+            setCurrent(min);
+        } else if (parseInt(e.target.value) > max) {
+            setCurrent(max);
+        } else {
+            setCurrent(parseInt(e.target.value));
         }
     }
 
@@ -20,7 +32,7 @@ function Counter({ min, max }) {
         <>
             <button type="button" onClick={ minus }>-</button>
             <span>{ current }</span>
-            {/* <input type="text" value={ current } /> */}
+            <input type="text" value={ current } onChange={ change } />
             <button type="button" onClick={ plus }>+</button>
         </>
     );
