@@ -31,7 +31,6 @@ function Counter({ min, max }) {
     return (
         <>
             <button type="button" onClick={ minus }>-</button>
-            <span>{ current }</span>
             <input type="text" value={ current } onChange={ change } />
             <button type="button" onClick={ plus }>+</button>
         </>

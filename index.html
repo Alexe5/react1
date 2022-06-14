@@ -3,10 +3,32 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>1</title>
+		<title>React.js HW 1</title>
+		<link rel="stylesheet" href="dist/style.css">
 	</head>
 	<body>
-		<div class="app"></div>
-		<script src="dist/main.js"></script>
+		<div class="wrapper">
+			<div class="task">
+				<h2>Задание:</h2>
+				<h3>Сделайте компонент, который:</h3>
+				<ul>
+					<li>принимает параметры min и max</li>
+					<li>хранит в состоянии текущее значение счётчика - current</li>
+					<li>в начале работы устанавливает current = min</li>
+					<li>реализует две кнопки для увеличения и уменьшения current на 1</li>
+					<li>не выпускает current за границы min и max</li>
+					<li>выводит current в input между кнопками</li>
+					<li>используя библиотеку PropTypes, установить min и max обязательными для передачи числами</li>
+					<li>установить min по умолчанию со значением 1, если min не был передан</li>
+					<li>не позволять ввести в input значение за пределами min = 3 и max = 9</li>
+					<li>добавить валидацию, позволяющую вводить только числа</li>
+				</ul>
+				<hr>
+				<h2>Решение:</h2>
+			</div>
+
+			<div id="app"></div>
+		</div>
+	<script src="dist/main.js"></script>
 	</body>
 </html>
