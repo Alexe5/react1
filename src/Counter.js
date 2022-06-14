@@ -29,11 +29,11 @@ function Counter({ min, max }) {
     }
 
     return (
-        <>
+        <div className="counter">
             <button type="button" onClick={ minus }>-</button>
             <input type="text" value={ current } onChange={ change } />
             <button type="button" onClick={ plus }>+</button>
-        </>
+        </div>
     );
 }
 

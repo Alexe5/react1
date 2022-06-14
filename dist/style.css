@@ -27,3 +27,44 @@ body {
     border: none;
     border-top: 1px solid #61dafb;
 }
+
+.counter {
+    text-align: center;
+    margin: 0 0 50px 0;
+}
+
+.counter button {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    background: #fff;
+    color: #61dafb;
+    border: 2px solid #61dafb;
+    border-radius: 5px;
+    padding: 0;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.counter button:hover {
+    background: #61dafb;
+    color: #fff;
+}
+
+.counter input {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    background: #fff;
+    color: #61dafb;
+    border: 2px solid #61dafb;
+    border-radius: 5px;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0 5px;
+    outline: none;
+}
+
+.counter input:focus {
+    border: 2px solid #61dafb;
+}
