@@ -3,35 +3,45 @@ import PropTypes from 'prop-types';
 
 function Counter({ min, max }) {
     let [ current, setCurrent ] = useState(min);
+    let [ tempCurrent, setTempCurrent ] = useState(min);
 
     function minus(){
         if (current > min) {
             setCurrent(current - 1);
+            setTempCurrent(current - 1);
         }
     }
 
     function plus(){
         if (current < max) {
             setCurrent(current + 1);
+            setTempCurrent(current + 1);
         }
     }
 
     function change(e){
-        if (isNaN(e.target.value) || e.target.value === '') {
-            setCurrent(current);
-        } else if (parseInt(e.target.value) < min) {
+        setTempCurrent(e.target.value);
+    }
+
+    function blur(e){
+        if ( isNaN(parseInt(tempCurrent)) ) {
+            setTempCurrent(current);
+        } else if ( parseInt(tempCurrent) < min ) {
             setCurrent(min);
-        } else if (parseInt(e.target.value) > max) {
+            setTempCurrent(min);
+        } else if ( parseInt(tempCurrent) > max ) {
             setCurrent(max);
+            setTempCurrent(max);
         } else {
             setCurrent(parseInt(e.target.value));
+            setTempCurrent(parseInt(e.target.value));
         }
     }
 
     return (
         <div className="counter">
             <button type="button" onClick={ minus }>-</button>
-            <input type="text" value={ current } onChange={ change } />
+            <input type="text" value={ tempCurrent } onChange={ change } onBlur={ blur } />
             <button type="button" onClick={ plus }>+</button>
         </div>
     );
